@@ -1,0 +1,1582 @@
+{
+	"runs": [
+		{
+			"results": [
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 68,
+									"endLine": 145,
+									"snippet": {
+										"text": "f, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY, os.FileMode(hdr.Mode))"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 68,
+									"startLine": 145
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "integer overflow conversion int64 -\u003e uint32"
+					},
+					"ruleId": "G115"
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 43,
+									"endLine": 136,
+									"snippet": {
+										"text": "if err := os.MkdirAll(path, os.FileMode(hdr.Mode)); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 43,
+									"startLine": 136
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "integer overflow conversion int64 -\u003e uint32"
+					},
+					"ruleId": "G115"
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 95,
+									"endLine": 122,
+									"snippet": {
+										"text": "klog.V(4).Infof(\"tar: processing %q (type=%d, mode=%s)\", hdr.Name, hdr.Typeflag, os.FileMode(hdr.Mode))"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 95,
+									"startLine": 122
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "integer overflow conversion int64 -\u003e uint32"
+					},
+					"ruleId": "G115"
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "cmd/krew/cmd/root.go"
+								},
+								"region": {
+									"endColumn": 23,
+									"endLine": 131,
+									"snippet": {
+										"text": "upgradeCheckRate \u003c rand.Float64() { // only do the upgrade check randomly"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 23,
+									"startLine": 131
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Use of weak random number generator (math/rand or math/rand/v2 instead of crypto/rand)"
+					},
+					"ruleId": "G404"
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "site/functions/server/main.go"
+								},
+								"region": {
+									"endColumn": 13,
+									"endLine": 268,
+									"snippet": {
+										"text": "log.Fatal(http.ListenAndServe(fmt.Sprintf(\":%d\", *port), handler))"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 13,
+									"startLine": 268
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Use of net/http serve function that has no support for setting timeouts"
+					},
+					"ruleId": "G114"
+				},
+				{
+					"fixes": [
+						{
+							"artifactChanges": [
+								{
+									"artifactLocation": {
+										"description": {
+											"text": "unknown"
+										}
+									},
+									"replacements": [
+										{
+											"deletedRegion": {
+												"endColumn": 1,
+												"endLine": 1,
+												"sourceLanguage": "unknown",
+												"startColumn": 1,
+												"startLine": 1
+											}
+										}
+									]
+								}
+							],
+							"description": {
+								"markdown": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal.",
+								"text": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal."
+							}
+						}
+					],
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/installation/move.go"
+								},
+								"region": {
+									"endColumn": 13,
+									"endLine": 238,
+									"snippet": {
+										"text": "df, err := os.Create(dst)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 13,
+									"startLine": 238
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential file inclusion via variable"
+					},
+					"ruleId": "G304",
+					"ruleIndex": 1
+				},
+				{
+					"fixes": [
+						{
+							"artifactChanges": [
+								{
+									"artifactLocation": {
+										"description": {
+											"text": "unknown"
+										}
+									},
+									"replacements": [
+										{
+											"deletedRegion": {
+												"endColumn": 1,
+												"endLine": 1,
+												"sourceLanguage": "unknown",
+												"startColumn": 1,
+												"startLine": 1
+											}
+										}
+									]
+								}
+							],
+							"description": {
+								"markdown": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal.",
+								"text": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal."
+							}
+						}
+					],
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/installation/move.go"
+								},
+								"region": {
+									"endColumn": 13,
+									"endLine": 232,
+									"snippet": {
+										"text": "sf, err := os.Open(source)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 13,
+									"startLine": 232
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential file inclusion via variable"
+					},
+					"ruleId": "G304",
+					"ruleIndex": 1
+				},
+				{
+					"fixes": [
+						{
+							"artifactChanges": [
+								{
+									"artifactLocation": {
+										"description": {
+											"text": "unknown"
+										}
+									},
+									"replacements": [
+										{
+											"deletedRegion": {
+												"endColumn": 1,
+												"endLine": 1,
+												"sourceLanguage": "unknown",
+												"startColumn": 1,
+												"startLine": 1
+											}
+										}
+									]
+								}
+							],
+							"description": {
+								"markdown": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal.",
+								"text": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal."
+							}
+						}
+					],
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/index/indexscanner/scanner.go"
+								},
+								"region": {
+									"endColumn": 12,
+									"endLine": 114,
+									"snippet": {
+										"text": "f, err := os.Open(path)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 12,
+									"startLine": 114
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential file inclusion via variable"
+					},
+					"ruleId": "G304",
+					"ruleIndex": 1
+				},
+				{
+					"fixes": [
+						{
+							"artifactChanges": [
+								{
+									"artifactLocation": {
+										"description": {
+											"text": "unknown"
+										}
+									},
+									"replacements": [
+										{
+											"deletedRegion": {
+												"endColumn": 1,
+												"endLine": 1,
+												"sourceLanguage": "unknown",
+												"startColumn": 1,
+												"startLine": 1
+											}
+										}
+									]
+								}
+							],
+							"description": {
+								"markdown": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal.",
+								"text": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal."
+							}
+						}
+					],
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 14,
+									"endLine": 145,
+									"snippet": {
+										"text": "f, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY, os.FileMode(hdr.Mode))"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 14,
+									"startLine": 145
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential file inclusion via variable"
+					},
+					"ruleId": "G304",
+					"ruleIndex": 1
+				},
+				{
+					"fixes": [
+						{
+							"artifactChanges": [
+								{
+									"artifactLocation": {
+										"description": {
+											"text": "unknown"
+										}
+									},
+									"replacements": [
+										{
+											"deletedRegion": {
+												"endColumn": 1,
+												"endLine": 1,
+												"sourceLanguage": "unknown",
+												"startColumn": 1,
+												"startLine": 1
+											}
+										}
+									]
+								}
+							],
+							"description": {
+								"markdown": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal.",
+								"text": "Consider using os.Root to scope file access under a fixed root (Go \u003e=1.24). Prefer root.Open/root.Stat over os.Open/os.Stat to prevent directory traversal."
+							}
+						}
+					],
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 15,
+									"endLine": 82,
+									"snippet": {
+										"text": "dst, err := os.OpenFile(path, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, f.Mode())"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 15,
+									"startLine": 82
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential file inclusion via variable"
+					},
+					"ruleId": "G304",
+					"ruleIndex": 1
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "site/functions/server/main.go"
+								},
+								"region": {
+									"endColumn": 15,
+									"endLine": 219,
+									"snippet": {
+										"text": "resp, err := http.Get(url)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 15,
+									"startLine": 219
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential HTTP request made with variable url"
+					},
+					"ruleId": "G107"
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/fetch.go"
+								},
+								"region": {
+									"endColumn": 15,
+									"endLine": 40,
+									"snippet": {
+										"text": "resp, err := http.Get(uri)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 15,
+									"startLine": 40
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential HTTP request made with variable url"
+					},
+					"ruleId": "G107"
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "cmd/krew/cmd/internal/fetch_tag.go"
+								},
+								"region": {
+									"endColumn": 19,
+									"endLine": 35,
+									"snippet": {
+										"text": "response, err := http.Get(versionURL)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 19,
+									"startLine": 35
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential HTTP request made with variable url"
+					},
+					"ruleId": "G107"
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "cmd/krew/cmd/install.go"
+								},
+								"region": {
+									"endColumn": 15,
+									"endLine": 212,
+									"snippet": {
+										"text": "resp, err := http.Get(url)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 15,
+									"startLine": 212
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential HTTP request made with variable url"
+					},
+					"ruleId": "G107"
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 17,
+									"endLine": 150,
+									"snippet": {
+										"text": "if _, err := io.Copy(f, tr); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 17,
+									"startLine": 150
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential DoS vulnerability via decompression bomb"
+					},
+					"ruleId": "G110",
+					"ruleIndex": 1
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 16,
+									"endLine": 92,
+									"snippet": {
+										"text": "if _, err := io.Copy(dst, src); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 16,
+									"startLine": 92
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Potential DoS vulnerability via decompression bomb"
+					},
+					"ruleId": "G110",
+					"ruleIndex": 1
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/installation/move.go"
+								},
+								"region": {
+									"endColumn": 12,
+									"endLine": 167,
+									"snippet": {
+										"text": "if err := os.Chmod(tmp, 0o755); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 12,
+									"startLine": 167
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect file permissions to be 0600 or less"
+					},
+					"ruleId": "G302",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/testutil/tempdir.go"
+								},
+								"region": {
+									"endColumn": 12,
+									"endLine": 82,
+									"snippet": {
+										"text": "if err := os.MkdirAll(path, os.ModePerm); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 12,
+									"startLine": 82
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect directory permissions to be 0750 or less"
+					},
+					"ruleId": "G301",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/testutil/tempdir.go"
+								},
+								"region": {
+									"endColumn": 12,
+									"endLine": 61,
+									"snippet": {
+										"text": "if err := os.MkdirAll(filepath.Dir(path), os.ModePerm); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 12,
+									"startLine": 61
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect directory permissions to be 0750 or less"
+					},
+					"ruleId": "G301",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/installation/move.go"
+								},
+								"region": {
+									"endColumn": 12,
+									"endLine": 157,
+									"snippet": {
+										"text": "if err := os.MkdirAll(installationDir, 0o755); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 12,
+									"startLine": 157
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect directory permissions to be 0750 or less"
+					},
+					"ruleId": "G301",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/installation/move.go"
+								},
+								"region": {
+									"endColumn": 13,
+									"endLine": 132,
+									"snippet": {
+										"text": "if err := os.MkdirAll(filepath.Dir(m.to), 0o755); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 13,
+									"startLine": 132
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect directory permissions to be 0750 or less"
+					},
+					"ruleId": "G301",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/indexmigration/migration.go"
+								},
+								"region": {
+									"endColumn": 12,
+									"endLine": 50,
+									"snippet": {
+										"text": "if err := os.Mkdir(indexPath, os.ModePerm); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 12,
+									"startLine": 50
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect directory permissions to be 0750 or less"
+					},
+					"ruleId": "G301",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 14,
+									"endLine": 142,
+									"snippet": {
+										"text": "if err := os.MkdirAll(dir, 0o755); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 14,
+									"startLine": 142
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect directory permissions to be 0750 or less"
+					},
+					"ruleId": "G301",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 13,
+									"endLine": 74,
+									"snippet": {
+										"text": "if err := os.MkdirAll(dir, 0o755); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 13,
+									"startLine": 74
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect directory permissions to be 0750 or less"
+					},
+					"ruleId": "G301",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "cmd/krew/cmd/root.go"
+								},
+								"region": {
+									"endColumn": 13,
+									"endLine": 239,
+									"snippet": {
+										"text": "if err := os.MkdirAll(p, 0o755); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 13,
+									"startLine": 239
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect directory permissions to be 0750 or less"
+					},
+					"ruleId": "G301",
+					"ruleIndex": 3
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/testutil/tempdir.go"
+								},
+								"region": {
+									"endColumn": 12,
+									"endLine": 64,
+									"snippet": {
+										"text": "if err := os.WriteFile(path, content, os.ModePerm); err != nil {"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 12,
+									"startLine": 64
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect WriteFile permissions to be 0600 or less"
+					},
+					"ruleId": "G306",
+					"ruleIndex": 6
+				},
+				{
+					"level": "error",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/installation/receipt/receipt.go"
+								},
+								"region": {
+									"endColumn": 8,
+									"endLine": 36,
+									"snippet": {
+										"text": "err = os.WriteFile(dest, yamlBytes, 0o644)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 8,
+									"startLine": 36
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Expect WriteFile permissions to be 0600 or less"
+					},
+					"ruleId": "G306",
+					"ruleIndex": 6
+				},
+				{
+					"level": "warning",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/installation/move.go"
+								},
+								"region": {
+									"endColumn": 4,
+									"endLine": 181,
+									"snippet": {
+										"text": "os.Remove(installDir)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 4,
+									"startLine": 181
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Errors unhandled"
+					},
+					"ruleId": "G104"
+				},
+				{
+					"level": "warning",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 4,
+									"endLine": 154,
+									"snippet": {
+										"text": "f.Close()"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 4,
+									"startLine": 154
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Errors unhandled"
+					},
+					"ruleId": "G104"
+				},
+				{
+					"level": "warning",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 5,
+									"endLine": 151,
+									"snippet": {
+										"text": "f.Close()"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 5,
+									"startLine": 151
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Errors unhandled"
+					},
+					"ruleId": "G104"
+				},
+				{
+					"level": "warning",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 4,
+									"endLine": 89,
+									"snippet": {
+										"text": "dst.Close()"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 4,
+									"startLine": 89
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Errors unhandled"
+					},
+					"ruleId": "G104"
+				},
+				{
+					"level": "warning",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 4,
+									"endLine": 88,
+									"snippet": {
+										"text": "src.Close()"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 4,
+									"startLine": 88
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Errors unhandled"
+					},
+					"ruleId": "G104"
+				},
+				{
+					"level": "warning",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "internal/download/downloader.go"
+								},
+								"region": {
+									"endColumn": 4,
+									"endLine": 84,
+									"snippet": {
+										"text": "src.Close()"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 4,
+									"startLine": 84
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Errors unhandled"
+					},
+					"ruleId": "G104"
+				},
+				{
+					"level": "warning",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "cmd/krew/cmd/root.go"
+								},
+								"region": {
+									"endColumn": 3,
+									"endLine": 194,
+									"snippet": {
+										"text": "color.New(color.Bold).Fprintf(os.Stderr, upgradeNotification, version.GitTag(), latestTag)"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 3,
+									"startLine": 194
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Errors unhandled"
+					},
+					"ruleId": "G104"
+				},
+				{
+					"level": "warning",
+					"locations": [
+						{
+							"physicalLocation": {
+								"artifactLocation": {
+									"uri": "cmd/krew/cmd/internal/warning.go"
+								},
+								"region": {
+									"endColumn": 2,
+									"endLine": 25,
+									"snippet": {
+										"text": "color.New(color.FgRed, color.Bold).Fprint(w, \"WARNING: \")"
+									},
+									"sourceLanguage": "go",
+									"startColumn": 2,
+									"startLine": 25
+								}
+							}
+						}
+					],
+					"message": {
+						"text": "Errors unhandled"
+					},
+					"ruleId": "G104"
+				}
+			],
+			"taxonomies": [
+				{
+					"downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.4.xml.zip",
+					"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+					"informationUri": "https://cwe.mitre.org/data/published/cwe_v4.4.pdf/",
+					"isComprehensive": true,
+					"language": "en",
+					"minimumRequiredLocalizedDataSemanticVersion": "4.4",
+					"name": "CWE",
+					"organization": "MITRE",
+					"releaseDateUtc": "2021-03-15",
+					"shortDescription": {
+						"text": "The MITRE Common Weakness Enumeration"
+					},
+					"taxa": [
+						{
+							"fullDescription": {
+								"text": "The software performs a calculation that can produce an integer overflow or wraparound, when the logic assumes that the resulting value will always be larger than the original value. This can introduce other weaknesses when the calculation is used for resource management or execution control."
+							},
+							"guid": "c71e4fa0-720e-3e82-8b67-b2d44d0c604b",
+							"helpUri": "https://cwe.mitre.org/data/definitions/190.html",
+							"id": "190",
+							"shortDescription": {
+								"text": "Integer Overflow or Wraparound"
+							}
+						},
+						{
+							"fullDescription": {
+								"text": "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory."
+							},
+							"guid": "3e718404-88bc-3f17-883e-e85e74078a76",
+							"helpUri": "https://cwe.mitre.org/data/definitions/22.html",
+							"id": "22",
+							"shortDescription": {
+								"text": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+							}
+						},
+						{
+							"fullDescription": {
+								"text": "During installation, installed file permissions are set to allow anyone to modify those files."
+							},
+							"guid": "fca8970d-b44c-3162-a385-cc09266d12a4",
+							"helpUri": "https://cwe.mitre.org/data/definitions/276.html",
+							"id": "276",
+							"shortDescription": {
+								"text": "Incorrect Default Permissions"
+							}
+						},
+						{
+							"fullDescription": {
+								"text": "The product uses a Pseudo-Random Number Generator (PRNG) in a security context, but the PRNG's algorithm is not cryptographically strong."
+							},
+							"guid": "0512047f-75a2-3ac3-bb28-97df3a80efbe",
+							"helpUri": "https://cwe.mitre.org/data/definitions/338.html",
+							"id": "338",
+							"shortDescription": {
+								"text": "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)"
+							}
+						},
+						{
+							"fullDescription": {
+								"text": "The software does not handle or incorrectly handles a compressed input with a very high compression ratio that produces a large output."
+							},
+							"guid": "8f97f42f-c62a-3d38-b26d-97951029c895",
+							"helpUri": "https://cwe.mitre.org/data/definitions/409.html",
+							"id": "409",
+							"shortDescription": {
+								"text": "Improper Handling of Highly Compressed Data (Data Amplification)"
+							}
+						},
+						{
+							"fullDescription": {
+								"text": "The program invokes a potentially dangerous function that could introduce a vulnerability if it is used incorrectly, but the function can also be used safely."
+							},
+							"guid": "f97fef5f-b85b-3d63-9932-7053f298803d",
+							"helpUri": "https://cwe.mitre.org/data/definitions/676.html",
+							"id": "676",
+							"shortDescription": {
+								"text": "Use of Potentially Dangerous Function"
+							}
+						},
+						{
+							"fullDescription": {
+								"text": "The software does not properly anticipate or handle exceptional conditions that rarely occur during normal operation of the software."
+							},
+							"guid": "7df38d1d-038e-3ced-8601-8d9265b90a25",
+							"helpUri": "https://cwe.mitre.org/data/definitions/703.html",
+							"id": "703",
+							"shortDescription": {
+								"text": "Improper Check or Handling of Exceptional Conditions"
+							}
+						},
+						{
+							"fullDescription": {
+								"text": "The software constructs a string for a command to executed by a separate component\nin another control sphere, but it does not properly delimit the\nintended arguments, options, or switches within that command string."
+							},
+							"guid": "d684c7e2-3856-3079-900b-f59c57ace34b",
+							"helpUri": "https://cwe.mitre.org/data/definitions/88.html",
+							"id": "88",
+							"shortDescription": {
+								"text": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')"
+							}
+						}
+					],
+					"version": "4.4"
+				}
+			],
+			"tool": {
+				"driver": {
+					"guid": "8b518d5f-906d-39f9-894b-d327b1a421c5",
+					"informationUri": "https://github.com/securego/gosec/",
+					"name": "gosec",
+					"rules": [
+						{
+							"defaultConfiguration": {
+								"level": "warning"
+							},
+							"fullDescription": {
+								"text": "Errors unhandled"
+							},
+							"help": {
+								"text": "Errors unhandled\nSeverity: LOW\nConfidence: HIGH\n"
+							},
+							"id": "G104",
+							"name": "Improper Check or Handling of Exceptional Conditions",
+							"properties": {
+								"precision": "high",
+								"tags": [
+									"security",
+									"LOW"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "7df38d1d-038e-3ced-8601-8d9265b90a25",
+										"id": "703",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Errors unhandled"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "Potential HTTP request made with variable url"
+							},
+							"help": {
+								"text": "Potential HTTP request made with variable url\nSeverity: MEDIUM\nConfidence: MEDIUM\n"
+							},
+							"id": "G107",
+							"name": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')",
+							"properties": {
+								"precision": "medium",
+								"tags": [
+									"security",
+									"MEDIUM"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "d684c7e2-3856-3079-900b-f59c57ace34b",
+										"id": "88",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Potential HTTP request made with variable url"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "Potential DoS vulnerability via decompression bomb"
+							},
+							"help": {
+								"text": "Potential DoS vulnerability via decompression bomb\nSeverity: MEDIUM\nConfidence: MEDIUM\n"
+							},
+							"id": "G110",
+							"name": "Improper Handling of Highly Compressed Data (Data Amplification)",
+							"properties": {
+								"precision": "medium",
+								"tags": [
+									"security",
+									"MEDIUM"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "8f97f42f-c62a-3d38-b26d-97951029c895",
+										"id": "409",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Potential DoS vulnerability via decompression bomb"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "Use of net/http serve function that has no support for setting timeouts"
+							},
+							"help": {
+								"text": "Use of net/http serve function that has no support for setting timeouts\nSeverity: MEDIUM\nConfidence: HIGH\n"
+							},
+							"id": "G114",
+							"name": "Use of Potentially Dangerous Function",
+							"properties": {
+								"precision": "high",
+								"tags": [
+									"security",
+									"MEDIUM"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "f97fef5f-b85b-3d63-9932-7053f298803d",
+										"id": "676",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Use of net/http serve function that has no support for setting timeouts"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "Expect directory permissions to be 0750 or less"
+							},
+							"help": {
+								"text": "Expect directory permissions to be 0750 or less\nSeverity: MEDIUM\nConfidence: HIGH\n"
+							},
+							"id": "G301",
+							"name": "Incorrect Default Permissions",
+							"properties": {
+								"precision": "high",
+								"tags": [
+									"security",
+									"MEDIUM"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "fca8970d-b44c-3162-a385-cc09266d12a4",
+										"id": "276",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Expect directory permissions to be 0750 or less"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "Expect file permissions to be 0600 or less"
+							},
+							"help": {
+								"text": "Expect file permissions to be 0600 or less\nSeverity: MEDIUM\nConfidence: HIGH\n"
+							},
+							"id": "G302",
+							"name": "Incorrect Default Permissions",
+							"properties": {
+								"precision": "high",
+								"tags": [
+									"security",
+									"MEDIUM"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "fca8970d-b44c-3162-a385-cc09266d12a4",
+										"id": "276",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Expect file permissions to be 0600 or less"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "Potential file inclusion via variable"
+							},
+							"help": {
+								"text": "Potential file inclusion via variable\nSeverity: MEDIUM\nConfidence: HIGH\n"
+							},
+							"id": "G304",
+							"name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+							"properties": {
+								"precision": "high",
+								"tags": [
+									"security",
+									"MEDIUM"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "3e718404-88bc-3f17-883e-e85e74078a76",
+										"id": "22",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Potential file inclusion via variable"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "Expect WriteFile permissions to be 0600 or less"
+							},
+							"help": {
+								"text": "Expect WriteFile permissions to be 0600 or less\nSeverity: MEDIUM\nConfidence: HIGH\n"
+							},
+							"id": "G306",
+							"name": "Incorrect Default Permissions",
+							"properties": {
+								"precision": "high",
+								"tags": [
+									"security",
+									"MEDIUM"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "fca8970d-b44c-3162-a385-cc09266d12a4",
+										"id": "276",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Expect WriteFile permissions to be 0600 or less"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "Use of weak random number generator (math/rand or math/rand/v2 instead of crypto/rand)"
+							},
+							"help": {
+								"text": "Use of weak random number generator (math/rand or math/rand/v2 instead of crypto/rand)\nSeverity: HIGH\nConfidence: MEDIUM\n"
+							},
+							"id": "G404",
+							"name": "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)",
+							"properties": {
+								"precision": "medium",
+								"tags": [
+									"security",
+									"HIGH"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "0512047f-75a2-3ac3-bb28-97df3a80efbe",
+										"id": "338",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "Use of weak random number generator (math/rand or math/rand/v2 instead of crypto/rand)"
+							}
+						},
+						{
+							"defaultConfiguration": {
+								"level": "error"
+							},
+							"fullDescription": {
+								"text": "integer overflow conversion int64 -\u003e uint32"
+							},
+							"help": {
+								"text": "integer overflow conversion int64 -\u003e uint32\nSeverity: HIGH\nConfidence: MEDIUM\n"
+							},
+							"id": "G115",
+							"name": "Integer Overflow or Wraparound",
+							"properties": {
+								"precision": "medium",
+								"tags": [
+									"security",
+									"HIGH"
+								]
+							},
+							"relationships": [
+								{
+									"kinds": [
+										"superset"
+									],
+									"target": {
+										"guid": "c71e4fa0-720e-3e82-8b67-b2d44d0c604b",
+										"id": "190",
+										"toolComponent": {
+											"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+											"name": "CWE"
+										}
+									}
+								}
+							],
+							"shortDescription": {
+								"text": "integer overflow conversion int64 -\u003e uint32"
+							}
+						}
+					],
+					"semanticVersion": "2.22.11",
+					"supportedTaxonomies": [
+						{
+							"guid": "f2856fc0-85b7-373f-83e7-6f8582243547",
+							"name": "CWE"
+						}
+					],
+					"version": "2.22.11"
+				}
+			}
+		}
+	],
+	"$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+	"version": "2.1.0"
+}
